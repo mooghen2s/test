@@ -8,4 +8,4 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Send greeting
-      run: dir profiles
+      run: Get-ChildItem -Path profiles | Measure-Object -Property Length -Sum
