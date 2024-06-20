@@ -41,27 +41,32 @@ jobs:
 
     - name: run if puisi sama dengan a
       run: |        
+        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
         python main.py 1
       if: matrix.puisi == 'a'
     - name: run if puisi sama dengan b
       run: |        
+        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
         python main.py 2
       if: matrix.puisi == 'b'
     - name: run if puisi sama dengan c
       run: |        
+        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
         python main.py 3
       if: matrix.puisi == 'c'
 
     - name: run if puisi sama dengan d
       run: |
+        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
         python main.py 4
       if: matrix.puisi == 'd'
     - name: push if puisi sama dengan d
       run: |
-        Rename-Item -path profiles -NewName a
-        git add screenshot.png
+        #git add screenshot.png
+        git commit screenshot.png
+        git status
         git config --global user.name 'Your Name'
         git config --global user.email 'your-username@users.noreply.github.com'
-        git commit -am "Automated report"
+        #git commit -am "Automated report"
         git push
       if: matrix.puisi == 'd'
