@@ -1,4 +1,4 @@
-name: test
+name: test_run_y
 on:
   push:
   schedule:
@@ -6,9 +6,9 @@ on:
 
 jobs:
   build:
-    #strategy:
-      #matrix:
-        #puisi: [a, b, g]  
+    strategy:
+      matrix:
+        puisi: [a, b, c, d]  
     runs-on: windows-latest
     steps:
     - name: Checkout repository
@@ -39,27 +39,20 @@ jobs:
       run: |
         pip install -r requirements.txt --quiet
 
-    - name: run if puisi sama dengan g
+    - name: run if puisi sama dengan a
       run: |        
         python main.py 1
-        ls
-      #if: matrix.puisi == 'a'
-    - name: run if puisi sama dengan g
+      if: matrix.puisi == 'a'
+    - name: run if puisi sama dengan b
       run: |        
         python main.py 2
-        ls
-      #if: matrix.puisi == 'b'
-    - name: run if puisi sama dengan g
+      if: matrix.puisi == 'b'
+    - name: run if puisi sama dengan c
       run: |        
         python main.py 3
-      #if: matrix.puisi == 'g'
+      if: matrix.puisi == 'c'
 
-    - name: run if puisi sama dengan g
+    - name: run if puisi sama dengan d
       run: |
-        
-        git add screenshot.png
-        git config --global user.name 'Your Name'
-        git config --global user.email 'your-username@users.noreply.github.com'
-        git commit -am "Automated report"
-        git push
-      #if: matrix.puisi == 'g'
+        python main.py 3
+      if: matrix.puisi == 'd'
