@@ -1,0 +1,11 @@
+name: Manual workflow
+on:
+  push:
+jobs:
+  greet:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Send greeting
+      run: dir profiles
