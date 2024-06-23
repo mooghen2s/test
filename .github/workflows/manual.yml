@@ -42,24 +42,7 @@ jobs:
     - name: run if puisi sama dengan a
       run: |        
         Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
-        python main.py 1
-      if: matrix.puisi == 'a'
-    - name: run if puisi sama dengan b
-      run: |        
-        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
-        python main.py 2
-      if: matrix.puisi == 'b'
-    - name: run if puisi sama dengan c
-      run: |        
-        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
-        python main.py 3
-      if: matrix.puisi == 'c'
-
-    - name: run if puisi sama dengan d
-      run: |
-        Invoke-WebRequest "https://raw.githubusercontent.com/mooghen2s/xra/main/videos.json" -OutFile "videos.json"
-        python main.py 4
-      if: matrix.puisi == 'd'
+        python main.py 0
     - name: push if puisi sama dengan d
       run: |
         #git add screenshot.png
