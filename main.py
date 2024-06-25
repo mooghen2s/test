@@ -66,7 +66,7 @@ if __name__ == "__main__":
     parser.add_argument('profile_number', type=int, help='Nomor profil yang akan digunakan')
     args = parser.parse_args()
     profile_loop = f'Profile{args.profile_number}'
-    for nujsi in range(1, 5)
+    for nujsi in range(1, 5):
         profile_dir = f'Profile{nujsi}'
         nonton_youtube(profile_dir)
     if profile_loop == 'Profile0':
